@@ -13,12 +13,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import static nqueengui.Solver.solve;
 
 /**
  *
@@ -42,7 +40,6 @@ public class NQueenGUI extends Application {
             public void handle(ActionEvent event) {
                 int n = Integer.parseInt(N.getText());
                 Printer p = new Printer();
-                solve(n);
                 p.printQueen(n);
                 
             }

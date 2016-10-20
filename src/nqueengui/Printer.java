@@ -6,17 +6,8 @@
 package nqueengui;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import static nqueengui.Solver.solve;
@@ -35,13 +26,14 @@ public class Printer extends Application{
          
 
         TextArea textArea = new TextArea();
+        solve(n_q);
         textArea.setText(Solver.ans);
 
         VBox vbox = new VBox(textArea);
 
-        Scene scene = new Scene(vbox, 200, 100);
+        Scene scene = new Scene(vbox, 400, 200);
         Stage s = new Stage();
-        s.setTitle("N-Queen problem Solver");
+        s.setTitle("Solutions");
         s.setScene(scene);
         s.show();
     }
