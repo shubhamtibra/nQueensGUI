@@ -8,7 +8,11 @@ package nqueengui;
 import java.util.*;
 
 public class Solver{
-    static String ans = "";
+    String ans;
+    Solver(int n){
+        ans = new String("");
+        solve(n);
+    }
    
 
     public static boolean checkpos(int[] q, int n) {
@@ -19,7 +23,7 @@ public class Solver{
         return true;
     }
 
-    public static void printQueens(int[] q) {
+    public void printQueens(int[] q) {
         int n = q.length;
         String temp = new String();
         for (int i = 0; i < n; i++) {
@@ -35,12 +39,12 @@ public class Solver{
         ans += temp;
     }
 
-    public static void solve(int n) {
+    public void solve(int n) {
         int[] a = new int[n];
         solve(a, 0);
     }
 
-    public static void solve(int[] q, int k) {
+    public void solve(int[] q, int k) {
         int n = q.length;
         if (k == n) printQueens(q);
         else {

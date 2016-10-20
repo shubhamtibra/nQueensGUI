@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import static nqueengui.Solver.solve;
+import  nqueengui.Solver;
 /**
  *
  * @author user
@@ -26,8 +26,9 @@ public class Printer extends Application{
          
 
         TextArea textArea = new TextArea();
-        solve(n_q);
-        textArea.setText(Solver.ans);
+        Solver sol = new Solver(n_q);
+        textArea.setEditable(false);
+        textArea.setText(sol.ans);
 
         VBox vbox = new VBox(textArea);
 
